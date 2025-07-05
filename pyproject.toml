@@ -6,7 +6,9 @@ readme = "README.md"
 license = "MIT"
 authors = [{ name = "Seu nome", email = "seu@email.com" }]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "rich>=14.0.0",
+]
 
 [project.urls]
 Homepage = "https://www.otaviomiranda.com.br/logging-no-python-pare-de-usar-print-no-lugar-errado/"
