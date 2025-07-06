@@ -1,13 +1,13 @@
 # Essa é a função da aula 6:
-# Título
-# https://youtu.be/z7LgK8KDcI0
+# Handler e Formatter + addHandler + Propagation no Logging do Python - Aula 6
+# https://youtu.be/7fCFueRe9jI
 #
 # Playlist:
 # https://www.youtube.com/playlist?list=PLbIBj8vQhvm28qR-yvWP3JELGelWxsxaI
 #
 # Artigo:
 #
-# https://www.otaviomiranda.com.br/2025/logging-no-python-pare-de-usar-print-no-lugar-errado/
+# https://www.otaviomiranda.com.br/2025/logging-no-python-pare-de-usar-print-no-lugar-errado/#loggers-de-terceiros-podem-entrar-no-seu-log
 
 # 1 - Como os logs de terceiros podem poluir seu log
 # 2 - Como configurar o logger para sua lib

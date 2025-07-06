@@ -7,7 +7,7 @@
 #
 # Artigo:
 #
-# https://www.otaviomiranda.com.br/2025/logging-no-python-pare-de-usar-print-no-lugar-errado/
+# https://www.otaviomiranda.com.br/2025/logging-no-python-pare-de-usar-print-no-lugar-errado/#como-o-level-funciona
 #
 # Level
 # log_record.level >= Logger config DEBUG    10

@@ -7,7 +7,7 @@
 #
 # Artigo:
 #
-# https://www.otaviomiranda.com.br/2025/logging-no-python-pare-de-usar-print-no-lugar-errado/
+# https://www.otaviomiranda.com.br/2025/logging-no-python-pare-de-usar-print-no-lugar-errado/#filehandler-saida-para-um-arquivo
 
 import logging
 

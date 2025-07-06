@@ -9,7 +9,7 @@ import traceback
 #
 # Artigo:
 #
-# https://www.otaviomiranda.com.br/2025/logging-no-python-pare-de-usar-print-no-lugar-errado/
+# https://www.otaviomiranda.com.br/2025/logging-no-python-pare-de-usar-print-no-lugar-errado/#como-o-logging-funciona-por-dentro
 #
 # Como desligo esse print em prod?
 # Qual a gravidade do print? Foi correto? Foi erro?

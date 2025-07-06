@@ -7,7 +7,7 @@
 #
 # Artigo:
 #
-# https://www.otaviomiranda.com.br/2025/logging-no-python-pare-de-usar-print-no-lugar-errado/
+# https://www.otaviomiranda.com.br/2025/logging-no-python-pare-de-usar-print-no-lugar-errado/#conceitos-principais-loggers-handlers-formatters-e-filters
 #
 # Como desligo esse print em prod?
 # Qual a gravidade do print? Foi correto? Foi erro?
