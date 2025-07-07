@@ -1,4 +1,4 @@
-# Essa é a função da aula 3:
+# Aula 3
 # Entenda o level (nível de severidade) do Logging no Python - Aula 3
 # https://youtu.be/YXwcQGnTU3U
 #

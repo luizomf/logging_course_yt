@@ -1,4 +1,4 @@
-# Essa é a função da aula 6:
+# Aula 6
 # Handler e Formatter + addHandler + Propagation no Logging do Python - Aula 6
 # https://youtu.be/7fCFueRe9jI
 #

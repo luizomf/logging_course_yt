@@ -1,4 +1,4 @@
-# Essa é a função da aula 5:
+# Aula 5
 # FileHandler e StreamHandler: usando nossos próprios Handlers com Logging - Aula 5
 # https://youtu.be/z7LgK8KDcI0
 #

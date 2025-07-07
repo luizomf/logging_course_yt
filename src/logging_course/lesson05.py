@@ -1,4 +1,4 @@
-# Essa é a função da aula 5:
+# Aula 5
 # FileHandler e StreamHandler: usando nossos próprios Handlers com Logging - Aula 5
 # https://youtu.be/z7LgK8KDcI0
 #
@@ -7,7 +7,7 @@
 #
 # Artigo:
 #
-# https://www.otaviomiranda.com.br/2025/logging-no-python-pare-de-usar-print-no-lugar-errado/#filehandler-saida-para-um-arquivo
+# https://www.otaviomiranda.com.br/2025/logging-no-python-pare-de-usar-print-no-lugar-errado/#basicconfig-filehandler-e-streamhandler
 
 import logging
 

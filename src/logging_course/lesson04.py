@@ -1,4 +1,4 @@
-# Essa é a função da aula 4:
+# Aula 4
 # Entenda a hierarquia dos Loggers no Logging do Python - Aula 4
 # https://youtu.be/62FE1GGoaR4
 #

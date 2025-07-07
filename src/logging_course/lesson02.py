@@ -1,4 +1,4 @@
-# Essa é a função da aula 2:
+# Aula 2
 # Entendendo os Componentes do Módulo Logging do Python - Aula 2
 # https://youtu.be/JTjxLLq7OrI?si=NERd7EM5niXTBbg1
 #

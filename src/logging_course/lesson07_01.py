@@ -1,4 +1,4 @@
-# Essa é a função da aula 7:
+# Aula 7
 # dictConfig - como usar um dicionário para configurar o Logging do Python - Aula 7
 # https://youtu.be/d7YoH9r4sNo
 #
