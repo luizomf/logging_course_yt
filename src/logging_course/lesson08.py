@@ -1,6 +1,6 @@
 # Aula 8
 # RotatingFileHandler e RichHandler no Logging do Python - Aula 8
-# https://youtu.be/z7LgK8KDcI0
+# https://youtu.be/MQKBIt7C-e4
 #
 # Playlist:
 # https://www.youtube.com/playlist?list=PLbIBj8vQhvm28qR-yvWP3JELGelWxsxaI
