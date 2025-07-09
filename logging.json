@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "disable_existing_loggers": false,
+  "formatters": {
+    "file": {
+      "format": "%(levelname)s|%(name)s|%(asctime)s|%(message)s|%(filename)s|%(lineno)d|%(funcName)s|%(module)s|%(process)d|%(processName)s|%(thread)d|%(threadName)s|%(taskName)s"
+    },
+    "console_stdout": { "format": "OUT: %(message)s", "datefmt": "[%X]" },
+    "console_stderr": { "format": "ERR: %(message)s", "datefmt": "[%X]" }
+  },
+  "filters": {
+    "max_level_info": {
+      "()": "logging_course.filters.MaxLevelFilter",
+      "max_level": "INFO"
+    }
+  },
+  "handlers": {
+    "console_stdout": {
+      "()": "logging_course.handlers.MyRichHandler",
+      "formatter": "console_stdout",
+      "rich_tracebacks": false,
+      "tracebacks_show_locals": false,
+      "show_time": true,
+      "show_level": true,
+      "omit_repeated_times": false,
+      "markup": false,
+      "enable_link_path": true,
+      "show_path": true,
+      "file": "stdout",
+      "level": "DEBUG",
+      "filters": ["max_level_info"]
+    },
+    "console_stderr": {
+      "()": "logging_course.handlers.MyRichHandler",
+      "formatter": "console_stderr",
+      "rich_tracebacks": false,
+      "tracebacks_show_locals": false,
+      "show_time": true,
+      "show_level": true,
+      "omit_repeated_times": false,
+      "markup": false,
+      "enable_link_path": true,
+      "show_path": true,
+      "file": "stderr",
+      "level": "WARNING"
+    },
+    "file": {
+      "class": "logging.handlers.RotatingFileHandler",
+      "formatter": "file",
+      "filename": "logs/log.log",
+      "maxBytes": 5242880,
+      "backupCount": 5,
+      "encoding": "utf-8"
+    }
+  },
+  "root": { "handlers": ["console_stdout", "console_stderr", "file"] },
+  "loggers": { "meuapp": { "level": "DEBUG" } }
+}
