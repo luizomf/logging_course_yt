@@ -1,6 +1,7 @@
 import json
 from logging.config import dictConfig
 from pathlib import Path
+from typing import Any
 
 ROOT_DIR = Path(".").resolve()
 LOGS_DIR = ROOT_DIR / "logs"
@@ -19,3 +20,28 @@ def setup() -> None:
         logging_config = json.load(file)
 
     dictConfig(logging_config)
+
+
+def parse_jsonl(path: Path) -> list[dict[str, Any]]:
+    with path.open("r", encoding="utf8") as file:
+        lines = file.readlines()
+
+    logs: list[dict[str, Any]] = []
+
+    if not lines:
+        return logs
+
+    for line in lines:
+        logs.append(json.loads(line))
+
+    return logs
+
+
+if __name__ == "__main__":
+    from rich import print as p
+
+    log_file = LOGS_DIR / "log.jsonl"
+
+    for log in parse_jsonl(log_file):
+        # This is just an example
+        p(log)

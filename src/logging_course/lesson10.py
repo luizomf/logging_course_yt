@@ -21,4 +21,6 @@ if __name__ == "__main__":
     logger.info("mensagem de log")
     logger.warning("mensagem de log")
     logger.error("mensagem de log")
-    logger.critical("mensagem de log")
+    logger.critical(
+        "Meu nome é %s %s", "Luiz", "Otávio", extra={"contexto": "Qualquer coisa"}
+    )

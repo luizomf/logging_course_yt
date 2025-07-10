@@ -5,6 +5,24 @@
     "file": {
       "format": "%(levelname)s|%(name)s|%(asctime)s|%(message)s|%(filename)s|%(lineno)d|%(funcName)s|%(module)s|%(process)d|%(processName)s|%(thread)d|%(threadName)s|%(taskName)s"
     },
+    "json": {
+      "()": "logging_course.formatters.JSONLogFormatter",
+      "include_keys": [
+        "created",
+        "message",
+        "levelname",
+        "name",
+        "filename",
+        "module",
+        "exc_info",
+        "lineno",
+        "threadName",
+        "processName",
+        "taskName",
+        "args",
+        "contexto"
+      ]
+    },
     "console_stdout": { "format": "OUT: %(message)s", "datefmt": "[%X]" },
     "console_stderr": { "format": "ERR: %(message)s", "datefmt": "[%X]" }
   },
@@ -46,8 +64,8 @@
     },
     "file": {
       "class": "logging.handlers.RotatingFileHandler",
-      "formatter": "file",
-      "filename": "logs/log.log",
+      "formatter": "json",
+      "filename": "logs/log.jsonl",
       "maxBytes": 5242880,
       "backupCount": 5,
       "encoding": "utf-8"
