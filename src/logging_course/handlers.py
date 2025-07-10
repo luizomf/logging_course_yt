@@ -1,4 +1,5 @@
 # ruff: noqa: ANN401
+import logging
 import sys
 from typing import Any, Literal
 
@@ -18,3 +19,6 @@ class MyRichHandler(RichHandler):
 
         console = Console(file=getattr(sys, file))
         self.console = console
+
+    def emit(self, record: logging.LogRecord) -> None:
+        return super().emit(record)

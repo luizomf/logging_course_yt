@@ -1,4 +1,6 @@
+import atexit
 import json
+import logging
 from logging.config import dictConfig
 from pathlib import Path
 from typing import Any
@@ -20,6 +22,18 @@ def setup() -> None:
         logging_config = json.load(file)
 
     dictConfig(logging_config)
+
+    queue_handler = logging.getHandlerByName("queue")
+
+    if queue_handler:
+        queue_handler.listener.start()  # pyright: ignore
+        atexit.register(stop_queue_listener)
+
+
+def stop_queue_listener() -> None:
+    queue_handler = logging.getHandlerByName("queue")
+    queue_handler.listener.stop()  # pyright: ignore
+    print("Queue listener stopped successfuly")
 
 
 def parse_jsonl(path: Path) -> list[dict[str, Any]]:

@@ -33,6 +33,11 @@
     }
   },
   "handlers": {
+    "queue": {
+      "class": "logging.handlers.QueueHandler",
+      "handlers": ["console_stdout", "console_stderr", "file"],
+      "respect_handler_level": true
+    },
     "console_stdout": {
       "()": "logging_course.handlers.MyRichHandler",
       "formatter": "console_stdout",
@@ -71,6 +76,6 @@
       "encoding": "utf-8"
     }
   },
-  "root": { "handlers": ["console_stdout", "console_stderr", "file"] },
+  "root": { "handlers": ["queue"] },
   "loggers": { "meuapp": { "level": "DEBUG" } }
 }
