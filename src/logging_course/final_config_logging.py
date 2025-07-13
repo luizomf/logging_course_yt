@@ -3,17 +3,21 @@ import json
 import logging
 from logging.config import dictConfig
 from logging.handlers import QueueHandler, QueueListener
-from pathlib import Path
 
-ROOT_DIR = Path(".").resolve()
-LOGS_DIR = ROOT_DIR / "logs"
-LOGGING_CONFIG_JSON = ROOT_DIR / "logging.json"
+from logging_course.settings import (
+    LOGGING_CONFIG_JSON,
+    LOGS_DIR,
+    SETUP_LOGGER_LEVEL,
+    SETUP_LOGGER_NAME,
+    LogLevel,
+    validate_level,
+)
 
 _setup_logging_done: bool = False
 _default_queue_listener: QueueListener | None = None
 
-_logger = logging.getLogger("config_setup")
-_logger.setLevel("DEBUG")
+_logger = logging.getLogger(SETUP_LOGGER_NAME)
+_logger.setLevel(SETUP_LOGGER_LEVEL)
 
 
 def _setup_logging() -> None:
@@ -81,9 +85,18 @@ def _stop_queue_listener() -> None:
     _default_queue_listener.stop()
 
 
-def get_logger(name: str = "") -> logging.Logger:
+def get_logger(name: str = "", level: LogLevel | None = None) -> logging.Logger:
     if not _setup_logging_done:
         _setup_logging()
         _logger.debug("'_setup_logging' used to configure Python logging.")
 
-    return logging.getLogger(name)
+    logger = logging.getLogger(name)
+
+    if level is not None:
+        validate_level(level)
+        _logger.debug(
+            f"Level {level!r} used by 'get_logger' to configure {name!r} logger."
+        )
+        logger.setLevel(level)
+
+    return logger
