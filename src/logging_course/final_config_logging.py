@@ -5,6 +5,7 @@ from logging.config import dictConfig
 from logging.handlers import QueueHandler, QueueListener
 
 from logging_course.settings import (
+    DEFAULT_LOGGER_LEVEL,
     LOGGING_CONFIG_JSON,
     LOGS_DIR,
     SETUP_LOGGER_LEVEL,
@@ -98,5 +99,11 @@ def get_logger(name: str = "", level: LogLevel | None = None) -> logging.Logger:
             f"Level {level!r} used by 'get_logger' to configure {name!r} logger."
         )
         logger.setLevel(level)
+    else:
+        env_level = DEFAULT_LOGGER_LEVEL
+        _logger.debug(
+            f"Level {env_level!r} used by 'ENV' to configure {name!r} logger."
+        )
+        logger.setLevel(env_level)
 
     return logger

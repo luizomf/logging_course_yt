@@ -6,12 +6,12 @@ def run() -> None:
 
 
 if __name__ == "__main__":
-    logger = get_logger("meuapp", level="WARNING")
+    # logger = get_logger("meuapp", level="DEBUG")
     logger = get_logger("meuapp")
-    logger = get_logger("meuapp")
-    logger = get_logger("meuapp")
-    logger = get_logger("meuapp")
-    logger = get_logger("meuapp")
+    # logger = get_logger("meuapp")
+    # logger = get_logger("meuapp")
+    # logger = get_logger("meuapp")
+    # logger = get_logger("meuapp")
 
     logger.debug("Esse é meu primeiro teste")
 

@@ -1,6 +1,11 @@
 from collections.abc import Callable
+from os import getenv
 from pathlib import Path
 from typing import Literal
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 type LogLevel = Literal["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
 ALLOWED_LEVELS: set[LogLevel] = {"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}
@@ -32,10 +37,17 @@ def validate_level(level: str) -> LogLevel:
 
 
 ROOT_DIR = define_setting(Path(".").resolve(), validator=validate_path_dir)
-LOGS_DIR = define_setting(ROOT_DIR / "logs")
+LOGS_DIR = ROOT_DIR / getenv("LOGS_DIR", "logs")
 LOGGING_CONFIG_JSON = define_setting(
-    ROOT_DIR / "logging.json", validator=validate_path_file
+    ROOT_DIR / getenv("LOGGING_CONFIG_JSON", "logging.json"),
+    validator=validate_path_file,
 )
 
-SETUP_LOGGER_NAME = define_setting("config_setup")
-SETUP_LOGGER_LEVEL = define_setting("DEBUG", validator=validate_level)
+SETUP_LOGGER_NAME = getenv("SETUP_LOGGER_NAME", "WARNING")
+SETUP_LOGGER_LEVEL = define_setting(
+    getenv("SETUP_LOGGER_LEVEL", "WARNING"), validator=validate_level
+)
+
+DEFAULT_LOGGER_LEVEL = define_setting(
+    getenv("DEFAULT_LOGGER_LEVEL", "WARNING"), validator=validate_level
+)

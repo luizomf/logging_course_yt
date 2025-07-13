@@ -7,6 +7,7 @@ license = "MIT"
 authors = [{ name = "Seu nome", email = "seu@email.com" }]
 requires-python = ">=3.13"
 dependencies = [
+    "python-dotenv>=1.1.1",
     "rich>=14.0.0",
 ]
 
